@@ -1,0 +1,146 @@
+/***************************
+
+    Layout: Base
+
+***************************/
+
+body, html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #060C18;
+  color: #BBBBBB;
+  font: {
+     family: $font-family;
+     size: $font-size-base;
+     weight: $font-weight-base;
+  }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: $line-height-base;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  color: #ffffff;
+}
+
+main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+label {
+  text-transform: uppercase;
+  color: #ffffff;
+  font: {
+    size: 12px;
+    weight: 700;
+  }
+  padding: 0 0 5px 0;
+  display: block;
+  width: 100%;
+}
+
+input {
+  background: rgba($primary-colour, 0.3);
+  height: 50px;
+  width: 100%;
+  padding: 5px 15px;
+  &::placeholder {
+    color: rgba(#ffffff, 0.5);
+  }
+}
+
+.page-content {
+  flex: 1 0 auto;
+}
+
+.bg-gradient {
+  margin-top: $subpage-margin;
+  background: rgb(30,33,58);
+  background: -moz-linear-gradient(15deg, rgba(30,33,58,1) 0%, rgba(29,68,137,1) 68%, rgba(52,93,167,1) 83%, rgba(133,47,47,1) 100%);
+  background: -webkit-linear-gradient(15deg, rgba(30,33,58,1) 0%,rgba(29,68,137,1) 68%,rgba(52,93,167,1) 83%,rgba(133,47,47,1) 100%);
+  background: linear-gradient(15deg, rgba(30,33,58,1) 0%,rgba(29,68,137,1) 68%,rgba(52,93,167,1) 83%,rgba(133,47,47,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e213a', endColorstr='#ef006f',GradientType=1 );
+}
+
+.iphone-stack {
+  @include media-breakpoint-down-md {
+    order: 2;
+    margin: 0;
+    text-align: center;
+  }
+  margin: -120px 0 0 0;
+  img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+.status-msg {
+  padding: 0 0 10px 0;
+  font: {
+    size: 16px;
+    weight: 700;
+  }
+}
+
+.status {
+  &-success {
+    @extend .status-msg;
+    color: #4affbe;
+  }
+  &-error {
+    @extend .status-msg;
+    color: #e76666;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+}
+
+.fade {
+  &-enter {
+    opacity: 0;
+    z-index: 1;
+    &-active {
+      opacity: 1;
+      @include transition(all 300ms ease-in);
+    }
+  }
+  &-exit {
+    opacity: 1;
+    @include transform(translate(0,0));
+    &-active {
+      opacity: 0.01;
+      @include transition(all 300ms ease-in);
+    }
+  }
+}
+
+@keyframes fade-in-top {
+  from {
+     opacity: 0;
+     transform: translateY(15px);
+  }
+  to {
+     opacity: 1;
+     transform: translateY(0);
+  }
+}

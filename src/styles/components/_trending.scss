@@ -1,0 +1,62 @@
+/***************************
+
+    Component: Trending
+
+***************************/
+
+.trending {
+  position: relative;
+  padding: 5px;
+  outline: none;
+  &-title {
+    position: absolute;
+    bottom: 0;
+    padding: 5px 10px;
+    width: 100%;
+    color: #ffffff;
+    line-height: 1.2;
+    @include text-truncate();
+    font: {
+      size: 16px;
+      weight: 700;
+    }
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.8) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.8) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#66000000',GradientType=0 );
+    z-index: 1;
+  }
+  &-img {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    &:after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+    img {
+      opacity: 1;
+      @include animation(1s ease-in fade-in);
+      @include transition(all 0.5s ease);
+      position: absolute;
+      height: auto;
+      width: 100%;
+    }
+  }
+}
+
+
+.flags {
+  @include media-breakpoint-down-md {
+    .col-sm-2 {
+      width: 70px;
+    }
+  }
+}
+
+.country-flag {
+  width: 100%;
+  margin: 0 auto 20px;
+}

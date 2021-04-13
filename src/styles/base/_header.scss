@@ -1,0 +1,239 @@
+header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.logo {
+  opacity: 0;
+  @include animation(fade-in-top ease 1s forwards);
+  @include transition(fade-in-top ease 1s forwards);
+  @include animation-delay(.5s);
+  margin: 0 50px 0 0;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.nav {
+  &-desktop {
+    @include media-breakpoint-down-md {
+      display: none;
+    }
+    display: inline-block;
+    ul {
+      list-style: none;
+      li {
+        display: inline-block;
+        margin: 0 25px 0 0;
+        a {
+          @include transition(color .2s ease-out, background 1s ease-in);
+          color: #ffffff;
+          text-decoration: none;
+          font: {
+            size: 17px;
+            weight: 700;
+          }
+          &:hover {
+            color: $secondary-colour;
+          }
+        }
+      }
+    }
+  }
+  &-mobile {
+    @include media-breakpoint-up-md {
+      display: none;
+    }
+    ul {
+      list-style: none;
+      outline: none;
+      width: 100%;
+      li {
+        margin: 0 0 15px 0;
+        a {
+          color: #ffffff;
+          text-decoration: none;
+          display: block;
+          font: {
+            size: 25px;
+            weight: 700;
+          }
+        }
+      }
+    }
+  }
+  &-btn {
+    border: 2px solid $secondary-colour;
+    color: $secondary-colour;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 7px 15px;
+    cursor: pointer;
+    @include transition(background .1s ease-out, background .1s ease-in);
+    @include media-breakpoint-down-md {
+      margin: 0 20px 0 0;
+    }
+    font: {
+      weight: 700;
+    }
+    @include media-breakpoint-up-md {
+      float: right;
+    }
+    &:hover {
+      background: $secondary-colour;
+      color: $primary-colour;
+    }
+    &-link {
+      cursor: pointer;
+      margin: 0;
+      padding: 0;
+      color: #A8A8A8!important;
+      color: $secondary-colour;
+      text-decoration: none;
+      font: {
+        size: 14px;
+        weight: 400;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &-footer {
+    position: relative;
+    padding: 20px 0 0;
+    margin: 50px 0 0;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 80px;
+      border: 0.5px solid #42464D;
+    }
+  }
+}
+
+.bm-burger {
+  &-button {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  }
+  &-bars {
+    background: #ffffff;
+    height: 3px!important;
+  }
+}
+
+.bm-cross {
+  background: #ffffff;
+  &-button {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.bm-menu {
+  background: $primary-colour;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+.bm-menu {
+  &-wrap {
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    width: 100%!important;
+  }
+}
+
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+.bm-item {
+  width: 100%;
+  outline: none;
+  &-list {
+    max-width: 300px;
+    margin: 0 auto;
+    @include flexbox();
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+}
+
+.language {
+  background: $primary-colour;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  text-align: right;
+  flex-direction: row;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 26px;
+  &-select {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #9EBBE7;
+    button {
+      color: #9EBBE7;
+      padding: 0;
+      font-size: 13px;
+      cursor: pointer;
+      &.active {
+        color: #ffffff;
+        font-weight: 800;
+      }
+      &:hover {
+        color: #ffffff;
+      }
+    }
+    li {
+      display: inline-block;
+      padding: 0 2px;
+      &:after {
+        content: '·';
+        padding: 0 0 0 4px;
+      }
+      &:last-child {
+        padding-right: 0;
+        &:after {
+          display:none;
+        }
+      }
+    }
+  }
+}

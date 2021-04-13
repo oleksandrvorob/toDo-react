@@ -1,0 +1,74 @@
+/***************************
+
+    Component: Buttons
+
+***************************/
+
+.buttons {
+  height: 50px;
+  @include media-breakpoint-down-md {
+    padding: 10px 10px !important;
+  }
+  @include transition(background .1s ease-out, background .1s ease-in);
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 3px;
+  text-decoration: none;
+  font: {
+    weight: 600;
+    size: 16px;
+  }
+}
+
+
+.btn {
+  &-primary {
+    @extend .buttons;
+    background: $secondary-colour !important;
+    border: 2px solid transparent;
+    @include media-breakpoint-down-md {
+      margin: 0 7px 0 0;
+    }
+    margin: 0 15px 0 0;
+    color: $primary-colour;
+    &:hover,
+    &:active {
+      background: darken($secondary-colour, 20%)!important;
+      border: 2px solid darken($secondary-colour, 20%)!important;
+    }
+  }
+  &-secondary {
+    @extend .buttons;
+    background: transparent;
+    border: 2px solid #ffffff;
+    &:hover,
+    &:active {
+      background: #ffffff!important;
+      color: $primary-colour!important;
+      border: 2px solid #ffffff!important;
+    }
+  }
+  &-validate {
+    height: 50px;
+    width: 100%;
+    @include media-breakpoint-down-md {
+      margin: 10px 0;
+    }
+  }
+  &-logout {
+    margin: 40px 0 0;
+  }
+  &-buy {
+    @extend .buttons;
+    background: $secondary-colour !important;
+    border: 2px solid transparent;
+    color: $primary-colour;
+    margin: 20px 0;
+    display: inline-block;
+    &:hover,
+    &:active {
+      background: darken($secondary-colour, 20%)!important;
+      border: 2px solid darken($secondary-colour, 20%)!important;
+    }
+  }
+}

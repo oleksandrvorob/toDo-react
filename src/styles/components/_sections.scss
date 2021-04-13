@@ -1,0 +1,147 @@
+/***************************
+
+    Component: Sections
+
+***************************/
+
+section {
+  padding: 60px 0;
+  display: flex;
+}
+
+.section {
+  &-trending { 
+    background: $primary-colour;
+  }
+  &-subscriptions {
+    background: url("../assets/img/sub-background.jpg") #000000 center;
+    background-size: cover;
+  }
+  &-redeem {
+    display: flex;
+  }
+  &-intro {
+    text-transform: uppercase; 
+    color: #9EBBE7;
+    margin: 0;
+    font: {
+      size: 16px;
+      weight: 600;
+    }
+  }
+  &-heading {
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 5px 0 30px 0;
+    font: {
+      size: 40px;
+      weight: 700;
+    }
+    @include media-breakpoint-down-md {
+      font: {
+        size: 32px;
+      }
+    }
+  }
+  &-hero {
+    background-size: cover;
+    padding: 160px 0 100px;
+  }
+  &-paymentmethods {
+    background: url("../assets/img/tile-bg.png") #ffffff repeat;
+    .section-heading, p {
+      color: $primary-colour;
+    }
+  }
+  &-premium {
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.premium-icon {
+  width: 130px;
+}
+
+.premium-badge {
+  @include media-breakpoint-down-md {
+    margin: 0 0 20px 0;
+  }
+}
+
+.country {
+  &-selector {
+    @include border-radius(3px);
+    position: relative;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 20px 0 0;
+    padding: 10px 20px;
+    color: $primary-colour;
+    background: $secondary-colour;
+    width: 250px;
+    margin: 0 auto;
+    border: 0;
+    &:after {
+      content: '⌃';
+      margin: 0 0 0 15px;
+      position: absolute;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.premium-payment {
+  background: url("../assets/img/tile-bg.png") #ffffff repeat;
+  position: relative;
+  color: $primary-colour;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(#D8D8D8, .3);
+  }
+  h3 {
+    color: $primary-colour;
+  }
+}
+
+.premium-package {
+  background: #141C35;
+  color: #ffffff;
+  padding: 30px;
+  margin: 0 0 10px 0;
+  text-align: center;
+  span {
+    color: $secondary-colour;
+    font-weight: bold;
+  }
+}
+
+.package-name {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 10px 0;
+}
+
+.payment-locations {
+  font-size: 13px;
+  color: $primary-colour;
+  ul {
+    margin: 0 0 0 20px;
+    li {
+      margin: 0 0 10px 0;
+    }
+  }
+}
+
+.package-button {
+  margin: 10px 0 0;
+  color: $primary-colour;
+  display: inline-block;
+}

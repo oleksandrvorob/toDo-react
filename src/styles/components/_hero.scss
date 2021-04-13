@@ -1,0 +1,101 @@
+/***************************
+
+    Component: Hero
+
+***************************/
+
+.hero {
+  @include flexbox();
+  background-size: cover;
+  min-height: 650px;
+  position: relative;
+  overflow: hidden;
+  @include media-breakpoint-down-md {
+    min-height: 700px;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    background: rgba(#000000, 0.2);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  &-content {
+    @include flexbox();
+    @include justify-content(center);
+    color: #ffffff;
+    z-index: 1;
+    width: 100%;
+    margin: 0 0 20px 0;
+    position: relative;
+    @include media-breakpoint-down-md {
+      height: 340px;
+    }
+  }
+  &-details {
+    @include animation(fade-in-top ease 1s forwards);
+    @include transition(fade-in-top ease 1s forwards);
+    @include animation-delay(1.3s);
+    opacity: 0;
+  }
+  &-heading {
+    @include media-breakpoint-down-md {
+      font: {
+        size: 38px;
+      }
+    }
+    font: {
+      size: 45px;
+      weight: 800;
+    }
+    line-height: 1.2;
+  }
+  &-buttons {
+    padding: 10px 0 0;
+    display: flex;
+  }
+  &-main {
+    min-height: 450px;
+    height: 60vh;
+  }
+  &-iphone,
+  &-android {
+    position: absolute;
+  }
+  &-iphone {
+    @include animation(fade-in-top ease 1s forwards);
+    @include transition(fade-in-top ease 1s forwards);
+    @include animation-delay(1.8s);
+    opacity: 0;
+    right: 30%;
+    img {
+      width: 100%; 
+    }
+    @include media-breakpoint-down-md {
+      top: 30px;
+      img {
+        width: 90%;
+      }
+    }
+  }
+  &-android {
+    @include animation(fade-in-top ease 1s forwards);
+    @include transition(fade-in-top ease 1s forwards);
+    @include animation-delay(2.0s);
+    opacity: 0;
+    z-index: 1;
+    left: 35%;
+    margin: 15% 0 0;
+    img {
+      width: 90%; 
+    }
+    @include media-breakpoint-down-md {
+      top: 30px;
+      img {
+        width: 75%;
+      }
+    }
+  }
+}

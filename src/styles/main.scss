@@ -1,0 +1,44 @@
+// Bootstrap
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/grid";
+
+// Slick
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+// Resets
+@import 'normalize', 
+        'reset';
+
+// Fonts
+@import 'fonts';
+
+// Helpers
+@import 'helpers/variables',
+        'helpers/utils';
+
+// Mixins
+@import 'mixins/mixins';
+      
+// Base
+@import 'base/base',
+        'base/header',
+        'base/footer';
+
+// Components
+@import 'components/sections',
+        'components/hero',
+        'components/slider',
+        'components/trending',
+        'components/cta',
+        'components/buttons',
+        'components/redeem',
+        'components/loader';
+
+        

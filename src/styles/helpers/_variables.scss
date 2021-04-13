@@ -1,0 +1,23 @@
+/***************************
+
+    Variables
+
+***************************/
+
+$font-family:                     "Muli", sans-serif, Arial, sans-serif;
+
+$font-size-base:                  1rem !default; // Assumes the browser default, typically `16px`
+$font-weight-base:                normal !default;
+$line-height-base:                1.5 !default;
+
+$primary-colour:                #060C18 !default;
+$secondary-colour:              #FBCF57 !default;
+
+$subpage-margin:                  125px !default;
+
+// Breakpoints
+$breakpoint-down-sm:              575.98px; // Small screen / Mobile
+$breakpoint-down-md:              767.98px; // Medium screen / Tablet
+
+$breakpoint-up-sm:                576px; // Small screen / Mobile
+$breakpoint-up-md:                768px; // Medium screen / Tablet

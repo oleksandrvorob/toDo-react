@@ -1,0 +1,47 @@
+/***************************
+
+    Component: Slider
+
+***************************/
+
+.slick {
+  &-slider {
+     margin-bottom: 30px;
+  }
+  &-dots {
+     position: relative;
+     li {
+        margin: 0;
+        width: 12px;
+        &.slick-active {
+           button {
+              &:before {
+                 color: #ffffff;
+                 font: {
+                    size: 8px;
+                 }
+              }
+           }
+        }
+        button {
+           display: inline-block;
+           &:before {
+              font: {
+                 size: 10px;
+              }
+              line-height: 40px;
+              color: #ffffff;
+              opacity: .15;
+           }
+        }
+     } 
+  }
+  &-list {
+     padding: 0px;
+  }
+  &-slide {
+    @include media-breakpoint-up-md { 
+      flex: 1 0 33.33333%;
+    }
+  }
+}
